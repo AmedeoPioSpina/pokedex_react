@@ -1,0 +1,28 @@
+.pokedex{
+    h1{
+        font-size: 3rem;
+        margin: 1rem 0;
+        text-align: center;
+    }
+    .pkd-search{
+        display: flex;
+        justify-content: center;
+        input{
+            border: 2px solid red;
+            border-right: none;
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+            padding-left: 0.4rem;
+            &:focus{
+                outline: none;
+            }
+        }
+        button{
+            background-color: red;
+            border: none;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 15px;
+            color: white;
+        }
+    }
+}

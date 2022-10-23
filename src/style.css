@@ -1,0 +1,26 @@
+.pokedex h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+.pokedex .pkd-search {
+  display: flex;
+  justify-content: center;
+}
+.pokedex .pkd-search input {
+  border: 2px solid red;
+  border-right: none;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  padding-left: 0.4rem;
+}
+.pokedex .pkd-search input:focus {
+  outline: none;
+}
+.pokedex .pkd-search button {
+  background-color: red;
+  border: none;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  color: white;
+}/*# sourceMappingURL=style.css.map */
