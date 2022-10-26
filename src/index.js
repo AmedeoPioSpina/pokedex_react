@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./reset.css";
 import "./style.css";
 import PkdResult from "./pkd-result";
+import axios from "axios";
 
 const Pokedex = () => {
 
@@ -15,15 +16,19 @@ const Pokedex = () => {
     }
 
     const inputFetch = async() => {
-        const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
-        .then((res) => res.json())
-        .then((data) => data)
-        .catch((err) => alert(err));
-        return result;
+        const result = await axios({
+            method: 'get',
+            url: `https://pokeapi.co/api/v2/pokemon/${inputValue}`,
+            responseType: 'json'
+          })
+            .then((res) => res.data)
+            .catch((e) => alert(e));
+        return result
     }
 
     const handleClick = async() => {
         await setPkData(await inputFetch());
+        console.log(await inputFetch())
         setInputValue("");
     }
 
