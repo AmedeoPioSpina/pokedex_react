@@ -3,21 +3,21 @@
   margin: 1rem 0;
   text-align: center;
 }
-.pokedex .pkd-search {
+.pokedex .pokedex-search {
   display: flex;
   justify-content: center;
 }
-.pokedex .pkd-search input {
+.pokedex .pokedex-search input {
   border: 2px solid red;
   border-right: none;
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
   padding-left: 0.4rem;
 }
-.pokedex .pkd-search input:focus {
+.pokedex .pokedex-search input:focus {
   outline: none;
 }
-.pokedex .pkd-search button {
+.pokedex .pokedex-search button {
   background-color: red;
   border: none;
   border-bottom-right-radius: 15px;
