@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { reorderPkLocationArea } from "./reorderPkLocationArea";
+import { orderLocationAreaEncounters } from "./orderLocationAreaEncounters";
 
 const PokemonCard = ({pkData}) => {
     
     const [pkLocationArea, setPkLocationArea] = useState([]);
+    const [versionsAndLocationArea, setVersionsAndLocationArea] = useState([]);
     
     const pkTypeText = () =>{
         if(pkData.types.length==1){
@@ -14,7 +15,7 @@ const PokemonCard = ({pkData}) => {
     };
 
     
-    const fetchPkLocationArea = async() => {
+    const fetchLocationAreaEncounters = async() => {
         const result = await axios.get(pkData.location_area_encounters)
         .then((res) => res.data)
         .catch((err) => alert(err));
@@ -22,8 +23,14 @@ const PokemonCard = ({pkData}) => {
     }
     
     useEffect(async() => {
-            const getPkLocationArea = await fetchPkLocationArea();
-            setPkLocationArea(reorderPkLocationArea(getPkLocationArea));
+            const pkLocationAreaEncountersData = await fetchLocationAreaEncounters();
+            setVersionsAndLocationArea([...orderLocationAreaEncounters(pkLocationAreaEncountersData)]);
+            console.log(versionsAndLocationArea)
+            versionsAndLocationArea.map((element) =>{
+                element.map((el, index) => {
+                    if(index===0){setPkLocationArea(prev => prev.push(<p>{el}</p>))}
+                })
+            })
         }, [pkData])
     
     return(
@@ -68,9 +75,13 @@ const PokemonCard = ({pkData}) => {
 
                 <div className="location-area">
                     LOCATION AERA:
-                        {
-                            
-                        }
+                        <ul>
+                            {
+                                pkLocationArea.map(element =>{
+                                    return element
+                                })
+                            }
+                        </ul>
                 </div>
             </div>
     )

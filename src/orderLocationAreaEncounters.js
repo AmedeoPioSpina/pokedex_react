@@ -1,17 +1,15 @@
-export const reorderPkLocationArea = (getPkLocationArea) => {
+export const orderLocationAreaEncounters = (pkLocationAreaEncountersData) => {
     console.log("inizio")
 
     let dynamicVersionsList = [];
     let versionAndLocationAreaAry = [];
-
-    getPkLocationArea.map((element) => {
+    
+    pkLocationAreaEncountersData.map((element) => {
 
         console.log(element)
         element.version_details.map((el) => {
 
-            let resultCheck = dynamicVersionsList.findIndex((item) => {
-                item===el.version.name;
-            })
+            let resultCheck = dynamicVersionsList.findIndex((item) => item === el.version.name)
             if(resultCheck!==-1){
                 versionAndLocationAreaAry[resultCheck].push(element.location_area.name)
             }
