@@ -17,8 +17,7 @@ const PokedexSearch = ({setPkData}) => {
     }
 
     const handleClick = async() => {
-        await setPkData(await inputFetch());
-        console.log(await inputFetch())
+        setPkData(await inputFetch());
         setInputValue("");
     }
 

@@ -1,8 +1,7 @@
 import PokemonCard from "./PokemonCard";
 
 const PokedexResult = ({pkData}) =>{
-    console.log(pkData.length)
-    if(pkData.length===0){
+    if(Object.values(pkData).length===0){
         return ;
     }
     else{

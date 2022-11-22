@@ -8,7 +8,11 @@ import PokedexResult from "./PokedexResult";
 
 const Pokedex = () => {
 
-    const [pkData, setPkData] = useState("");
+    const [pkData, setPkData] = useState({});
+
+    useEffect(()=>{
+        console.log(pkData)
+    },[pkData])
 
     return(
         <div className="pokedex">

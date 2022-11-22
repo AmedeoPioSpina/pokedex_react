@@ -1,12 +1,10 @@
 export const orderLocationAreaEncounters = (pkLocationAreaEncountersData) => {
-    console.log("inizio")
 
     let dynamicVersionsList = [];
     let versionAndLocationAreaAry = [];
     
     pkLocationAreaEncountersData.map((element) => {
 
-        console.log(element)
         element.version_details.map((el) => {
 
             let resultCheck = dynamicVersionsList.findIndex((item) => item === el.version.name)
@@ -19,8 +17,5 @@ export const orderLocationAreaEncounters = (pkLocationAreaEncountersData) => {
             }
         })
     })
-    console.log(versionAndLocationAreaAry)
-    console.log("fine")
-
     return versionAndLocationAreaAry;
 }

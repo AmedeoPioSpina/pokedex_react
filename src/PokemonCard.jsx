@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { orderLocationAreaEncounters } from "./orderLocationAreaEncounters";
+import VersionsAndLocationField from "./VersionsAndLocationField";
 
 const PokemonCard = ({pkData}) => {
     
@@ -8,7 +9,7 @@ const PokemonCard = ({pkData}) => {
     const [versionsAndLocationArea, setVersionsAndLocationArea] = useState([]);
     
     const pkTypeText = () =>{
-        if(pkData.types.length==1){
+        if(pkData.types.length===1){
             return pkData.types[0].type.name;
         }
         return pkData.types[0].type.name + " / " + pkData.types[1].type.name 
@@ -25,13 +26,22 @@ const PokemonCard = ({pkData}) => {
     useEffect(async() => {
             const pkLocationAreaEncountersData = await fetchLocationAreaEncounters();
             setVersionsAndLocationArea([...orderLocationAreaEncounters(pkLocationAreaEncountersData)]);
+                }, [pkData])
+                
+    useEffect(() => {
             console.log(versionsAndLocationArea)
+            let versionList = [];
             versionsAndLocationArea.map((element) =>{
                 element.map((el, index) => {
-                    if(index===0){setPkLocationArea(prev => prev.push(<p>{el}</p>))}
-                })
+                        if(index===0){versionList.push(el)}
+                    })
             })
-        }, [pkData])
+            setPkLocationArea([...versionList]);
+    },[versionsAndLocationArea])
+
+    useEffect(()=>{
+        console.log(pkLocationArea)
+    },[pkLocationArea])
     
     return(
         <div className="pokemon-card">
@@ -76,11 +86,7 @@ const PokemonCard = ({pkData}) => {
                 <div className="location-area">
                     LOCATION AERA:
                         <ul>
-                            {
-                                pkLocationArea.map(element =>{
-                                    return element
-                                })
-                            }
+                            <VersionsAndLocationField versionsAndLocationArea={versionsAndLocationArea} />
                         </ul>
                 </div>
             </div>
