@@ -1,8 +1,33 @@
 import { useEffect, useState } from "react"
+import axios from "axios";
+import { orderLocationAreaEncounters } from "./orderLocationAreaEncounters";
 
-const VersionsAndLocationField = ({versionsAndLocationArea}) => {
+const VersionsAndLocationField = ({pkData}) => {
 
-    const[personalizeClickInfo , setPersonalizeClickInfo] = useState([false]);
+    const [versionsAndLocationArea, setVersionsAndLocationArea] = useState([]);
+    const [personalizeClickInfo , setPersonalizeClickInfo] = useState([false]);
+
+    const fetchLocationAreaEncounters = async() => {
+        const result = await axios.get(pkData.location_area_encounters)
+        .then((res) => res.data)
+        .catch((err) => alert(err));
+        return result;
+    }
+    
+    useEffect(async() => {
+            const pkLocationAreaEncountersData = await fetchLocationAreaEncounters();
+            setVersionsAndLocationArea([...orderLocationAreaEncounters(pkLocationAreaEncountersData)]);
+                }, [pkData])
+                
+    useEffect(() => {
+            console.log(versionsAndLocationArea)
+            let versionList = [];
+            versionsAndLocationArea.map((element) =>{
+                element.map((el, index) => {
+                        if(index===0){versionList.push(el)}
+                    })
+            })
+    },[versionsAndLocationArea])
 
     if(versionsAndLocationArea.length===0){
         return 

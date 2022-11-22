@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ImageField from "./ImageField";
 import { orderLocationAreaEncounters } from "./orderLocationAreaEncounters";
 import VersionsAndLocationField from "./VersionsAndLocationField";
 
 const PokemonCard = ({pkData}) => {
-    
-    const [pkLocationArea, setPkLocationArea] = useState([]);
-    const [versionsAndLocationArea, setVersionsAndLocationArea] = useState([]);
     
     const pkTypeText = () =>{
         if(pkData.types.length===1){
@@ -14,34 +12,6 @@ const PokemonCard = ({pkData}) => {
         }
         return pkData.types[0].type.name + " / " + pkData.types[1].type.name 
     };
-
-    
-    const fetchLocationAreaEncounters = async() => {
-        const result = await axios.get(pkData.location_area_encounters)
-        .then((res) => res.data)
-        .catch((err) => alert(err));
-        return result;
-    }
-    
-    useEffect(async() => {
-            const pkLocationAreaEncountersData = await fetchLocationAreaEncounters();
-            setVersionsAndLocationArea([...orderLocationAreaEncounters(pkLocationAreaEncountersData)]);
-                }, [pkData])
-                
-    useEffect(() => {
-            console.log(versionsAndLocationArea)
-            let versionList = [];
-            versionsAndLocationArea.map((element) =>{
-                element.map((el, index) => {
-                        if(index===0){versionList.push(el)}
-                    })
-            })
-            setPkLocationArea([...versionList]);
-    },[versionsAndLocationArea])
-
-    useEffect(()=>{
-        console.log(pkLocationArea)
-    },[pkLocationArea])
     
     return(
         <div className="pokemon-card">
@@ -66,11 +36,7 @@ const PokemonCard = ({pkData}) => {
                 <div className="pk-imgs">
                     <img src="" alt="" />
                     <div className="imgs-btns-choose">
-                        <button onClick={() => {}}>shiny</button>
-                        <button onClick={() => {}}>male</button>
-                        <button onClick={() => {}}>female</button>
-                        <button onClick={() => {}}>front</button>
-                        <button onClick={() => {}}>back</button>
+                        <ImageField pkData={pkData}/>
                     </div>
                 </div>
 
@@ -86,7 +52,7 @@ const PokemonCard = ({pkData}) => {
                 <div className="location-area">
                     LOCATION AERA:
                         <ul>
-                            <VersionsAndLocationField versionsAndLocationArea={versionsAndLocationArea} />
+                            <VersionsAndLocationField pkData={pkData} />
                         </ul>
                 </div>
             </div>
