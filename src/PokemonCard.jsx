@@ -1,17 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import EvolutionsField from "./EvolutionsField";
 import ImageField from "./ImageField";
 import { orderLocationAreaEncounters } from "./orderLocationAreaEncounters";
+import { textFormatFunc } from "./textFormatFunc";
 import VersionsAndLocationField from "./VersionsAndLocationField";
 
 const PokemonCard = ({pkData}) => {
     
     const pkTypeText = () =>{
         if(pkData.types.length===1){
-            return pkData.types[0].type.name;
+            return textFormatFunc(pkData.types[0].type.name, "upperCase");
         }
-        return pkData.types[0].type.name + " / " + pkData.types[1].type.name 
-    };
+        return textFormatFunc(pkData.types[0].type.name, "upperCase") + " / " + textFormatFunc(pkData.types[1].type.name, "upperCase")
+    }
     
     return(
         <div className="pokemon-card">
@@ -28,7 +30,7 @@ const PokemonCard = ({pkData}) => {
                     <div className="field">
                         NAME:
                         <p>
-                            {pkData.name}
+                            {textFormatFunc(pkData.name, "upperCase")}
                         </p>
                     </div>
                 </div>
@@ -51,9 +53,14 @@ const PokemonCard = ({pkData}) => {
 
                 <div className="location-area">
                     LOCATION AERA:
-                        <ul>
+                    <ul>
                             <VersionsAndLocationField pkData={pkData} />
-                        </ul>
+                    </ul>
+                </div>
+
+                <div className="evolutionary-chain">
+                    EVOLUTIONARY CHAIN:
+                    <EvolutionsField pkData={pkData}/>
                 </div>
             </div>
     )

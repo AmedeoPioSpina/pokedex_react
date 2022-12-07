@@ -21,9 +21,15 @@ const PokedexSearch = ({setPkData}) => {
         setInputValue("");
     }
 
+    const handleKeyPress = (e) => {
+        if(e.key === "Enter"){
+            handleClick();
+        }
+    } 
+
     return(
         <div className="pokedex-search">
-                <input onChange={(e) => {handleChange(e)}} value={inputValue}/>
+                <input onChange={(e) => {handleChange(e)}} onKeyPress={(e) => handleKeyPress(e)} value={inputValue}/>
                 <button onClick={async() => {await handleClick()}}>search</button>
         </div>
     )

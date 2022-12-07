@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 import { orderLocationAreaEncounters } from "./orderLocationAreaEncounters";
+import { textFormatFunc } from "./textFormatFunc";
 
 const VersionsAndLocationField = ({pkData}) => {
 
@@ -30,7 +31,7 @@ const VersionsAndLocationField = ({pkData}) => {
     },[versionsAndLocationArea])
 
     if(versionsAndLocationArea.length===0){
-        return 
+        return <li>none</li>
 
     }
 
@@ -38,16 +39,22 @@ const VersionsAndLocationField = ({pkData}) => {
         return ( 
             versionsAndLocationArea[personalizeClickInfo[2]].map((element, index) => {
                 if(index===0){
-                    return <li key={index} onClick={(e) => {setPersonalizeClickInfo([false])}}>{element}</li>
+                    return <li key={index} onClick={(e) => {setPersonalizeClickInfo([false])}}>{textFormatFunc(element, "upperCase") + ":"}</li>
                 }
-                return<li key={index}>{element}</li>
+                else if(index === versionsAndLocationArea[personalizeClickInfo[2]].length - 1){ 
+                    return <li key={index}>{textFormatFunc(element, "upperCase") + "."}</li>
+                }
+                return <li key={index}>{textFormatFunc(element, "upperCase") + ","}</li>
             })
         )
     }
 
     return (
         versionsAndLocationArea.map((element, index) => {
-            return <li key={index} onClick={(e) => {setPersonalizeClickInfo([true, e.target.textContent, versionsAndLocationArea.findIndex((el) => el[0] === e.target.textContent)])}}>{element[0]}</li>
+            if(index === versionsAndLocationArea.length - 1){ 
+                return <li key={index} onClick={(e) => {setPersonalizeClickInfo([true, textFormatFunc( e.target.textContent, "lowerCase"), versionsAndLocationArea.findIndex((el) => el[0] === e.target.textContent.charAt(0).toLowerCase() + e.target.textContent.slice(1, e.target.textContent.length -1))])}}>{textFormatFunc(element[0], "upperCase") + "."}</li> 
+            }
+            return <li key={index} onClick={(e) => {setPersonalizeClickInfo([true, textFormatFunc( e.target.textContent, "lowerCase"), versionsAndLocationArea.findIndex((el) => el[0] === textFormatFunc( e.target.textContent, "lowerCase"))])}}>{textFormatFunc(element[0], "upperCase") + ","}</li>
         })
     )
 }
