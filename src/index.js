@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { useState } from "react";
-import "./reset.css";
-import "./style.css";
 import PokedexSearch from "./PokedexSearch";
+import axios from "axios";
 import PokedexResult from "./PokedexResult";
 
 const Pokedex = () => {
 
     const [pkData, setPkData] = useState({});
+    const [pkDataPrev, setPkDataPrev] = useState({});
+    const [pkDataNext, setPkDataNext] = useState({});
 
     useEffect(()=>{
         console.log(pkData)
@@ -19,9 +20,10 @@ const Pokedex = () => {
 
             <h1>Pokédex</h1>
 
-            <PokedexSearch setPkData={setPkData} />
+            <PokedexSearch pkData={pkData} setPkData={setPkData} setPkDataPrev={setPkDataPrev} setPkDataNext={setPkDataNext} />
 
-            <PokedexResult pkData={pkData} />
+            <PokedexResult pkData={pkData} setPkData={setPkData} pkDataPrev={pkDataPrev} setPkDataPrev={setPkDataPrev} pkDataNext={pkDataNext} setPkDataNext={setPkDataNext}/>
+
         </div>
     );
 

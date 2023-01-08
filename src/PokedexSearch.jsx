@@ -1,7 +1,8 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const PokedexSearch = ({setPkData}) => {
+const PokedexSearch = ({pkData, setPkData, setPkDataPrev, setPkDataNext}) => {
 
     const [inputValue, setInputValue] = useState("");
 
@@ -9,28 +10,23 @@ const PokedexSearch = ({setPkData}) => {
         setInputValue(e.target.value)
     }
 
-    const inputFetch = async() => {
-        const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
-            .then((res) => res.data)
-            .catch((e) => alert(e));
-        return result
-    }
-
     const handleClick = async() => {
-        setPkData(await inputFetch());
+        setPkData(await fetchInput());
         setInputValue("");
     }
+    
+    const fetchInput = async() => {
+        const lowerCaseInput = inputValue.toLowerCase();
+        const resutl = await axios.get(`https://pokeapi.co/api/v2/pokemon/${lowerCaseInput}`)
+        .then((res) => res.data)
+        .catch((err) => err);
+        return resutl;
+    }
 
-    const handleKeyPress = (e) => {
-        if(e.key === "Enter"){
-            handleClick();
-        }
-    } 
-
-    return(
-        <div className="pokedex-search">
-                <input onChange={(e) => {handleChange(e)}} onKeyPress={(e) => handleKeyPress(e)} value={inputValue}/>
-                <button onClick={async() => {await handleClick()}}>search</button>
+    return (
+        <div className="pokedex-input">
+            <input onChange={(e) => {handleChange(e)}} value={inputValue}/>
+            <button onClick={() => {handleClick()}}>search</button>
         </div>
     )
 }
