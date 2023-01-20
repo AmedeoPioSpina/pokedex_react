@@ -1,6 +1,18 @@
 import { firstLetterToUpperCaseFormatFunc } from "./firstLetterToUpperCaseFormatFunc";
+import PokemonGenderField from "./PokemonGenderField";
+import PokemonSkillsField from "./PokemonSkillsField";
+import PokemonTypeField from "./PokemonTypeField";
+import PokemonWeaknessesField from "./PokemonWeaknessesField";
 
 const PokemonCard = ({pkData}) => {
+
+    const pokemonGenderImageSelect = () => {
+        
+        if(pkData.sprites.front_default === null){
+            return pkData.sprites.front_female
+        }
+        return pkData.sprites.front_default
+    }
 
     return (
         <div className="pokemon-card">
@@ -14,6 +26,60 @@ const PokemonCard = ({pkData}) => {
                 </div>
             </div>
 
+            <div className="pokemon-image">
+                <img src={pokemonGenderImageSelect()} alt="PokemonImage" />
+            </div>
+
+            <div className="characteristics">
+
+                <div className="height-field">
+                    <p className="field-name">
+                        Height
+                    </p>
+                    <p>
+                        {pkData.height/10 + " m"}
+                    </p>
+                </div>
+
+                <div className="weight-field">
+                    <p className="field-name">
+                        Weight
+                    </p>
+                    <p>
+                        {pkData.weight/10 + "kg"}
+                    </p>
+                </div>
+
+                <div className="skills-field">
+                    <p className="name-field">
+                        Skills
+                    </p>
+                    <PokemonSkillsField pkData={pkData}/>
+                </div>
+
+                <div className="gender-field">
+                    <p className="name-field">
+                        Gender
+                    </p>
+                    <div className="gender-icons">
+                        <PokemonGenderField pkData={pkData} />
+                    </div>
+                </div>       
+            </div>
+
+            <div className="type-field">
+                <p>Type</p>
+                <ul>
+                    <PokemonTypeField pkData={pkData}/>
+                </ul>
+            </div>
+
+            <div className="weaknesses-field">
+                <p>Weaknesses</p>
+                <ul>
+                    <PokemonWeaknessesField pkData={pkData}/>
+                </ul>
+            </div>
 
         </div>
     )
