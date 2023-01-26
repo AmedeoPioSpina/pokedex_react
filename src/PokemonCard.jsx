@@ -1,4 +1,5 @@
 import { firstLetterToUpperCaseFormatFunc } from "./firstLetterToUpperCaseFormatFunc";
+import PokemonEvolutionsField from "./PokemonEvolutionsField";
 import PokemonGenderField from "./PokemonGenderField";
 import PokemonSkillsField from "./PokemonSkillsField";
 import PokemonTypeField from "./PokemonTypeField";
@@ -46,7 +47,7 @@ const PokemonCard = ({pkData}) => {
                         Weight
                     </p>
                     <p>
-                        {pkData.weight/10 + "kg"}
+                        {pkData.weight/10 + " kg"}
                     </p>
                 </div>
 
@@ -81,6 +82,12 @@ const PokemonCard = ({pkData}) => {
                 </ul>
             </div>
 
+            <div className="evolutios-field">
+                <p>Evolutios</p>
+                <ul>
+                    <PokemonEvolutionsField pkData={pkData}/>
+                </ul>
+            </div>
         </div>
     )
 }
