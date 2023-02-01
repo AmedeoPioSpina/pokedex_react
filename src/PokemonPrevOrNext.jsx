@@ -39,8 +39,8 @@ const PokemonPrevOrNext = ({pkData, setPkData, pkDataPrev, setPkDataPrev, pkData
 
     return (
         <div className="pokemon-switch">
-            <button onClick={() => {handlePrevClick()}}>{`< ${pkDataPrev.name} N° ${pkDataPrev.id}`}</button>
-            <button onClick={() => {handleNextClick()}}>{`${pkDataNext.name} N° ${pkDataNext.id} >`}</button>
+            <button className={"btn-left"} onClick={() => {handlePrevClick()}}>{`< ${pkDataPrev.name} N° ${pkDataPrev.id}`}</button>
+            <button className={"btn-right"} onClick={() => {handleNextClick()}}>{`${pkDataNext.name} N° ${pkDataNext.id} >`}</button>
         </div>
     )
 }       

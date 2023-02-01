@@ -27,20 +27,23 @@ const PokemonEvolutionsField = ({pkData}) => {
     const evolutionsAcquisition = async() => {
         const evolutionsData = await fetchEvolutionChain();
         console.log(evolutionsData);
-        const urlsEvolutions = [];
+        const evolutions = [];
         let curr = evolutionsData.species;
         let next = evolutionsData.evolves_to;
 
-        do{
-            urlsEvolutions.push(curr);
-            if(Object.values(next).length!==0){
-                curr = next.species;
-                console.log(next.evolves_to)
-                next = next.evolves_to
-            }
-        }while(Object.values(next).length!==0)
+        evolutions.push(curr.name);
+        if(next.length!==0){
+            next.map((element) => {
+                evolutions.push(element.species.name);
+                if(element.evolves_to.length!==0){
+                    element.evolves_to.map((el) => evolutions.push(el.species.name))
+                }
+            })
 
-        console.log(urlsEvolutions)
+        }
+        console.log(evolutions)
+        setPkEvolutionsData(prev => prev.push(evolutions));
+        
     }
 
     useEffect(() => {
@@ -50,10 +53,38 @@ const PokemonEvolutionsField = ({pkData}) => {
         })()
     },[pkData])
 
+    useEffect(() => {
+        console.log(pkEvolutionsData)
+    },[pkEvolutionsData])
+
     return(
         <>
+            {
+                pkEvolutionsData.length!==0 ? (
+                    Object.values(pkEvolutionsData).map(element => {
+                            return (<li key={element}>{element}</li>)
+                        // else if(index===2 && element.length!==0){
+                        //     return  
+                        //         <li key={"ev1"}>
+                        //             <ul key={"ev1list"}>
+                        //                 {pkEvolutionsData[1].map((el) => <li key={el.name}>{el.name}</li>)}
+                        //             </ul>
+                        //         </li>
+                        // }
+                        // else if(index===3 && element.length!==0){
+                        //     return  
+                        //         <li key={"ev2"}>
+                        //             <ul key={"ev2list"}>
+                        //                 {pkEvolutionsData[2].map((el) => <li key={el.name}>{el.name}</li>)}
+                        //             </ul>
+                        //         </li>
+                        // }
+                    })
+                ) : (<li>ciao</li>)
+            }
         </>
     )
+
 }
 
 export default PokemonEvolutionsField;

@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+}
+body .pokedex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+body .pokedex h1 {
+  font-family: "Comfortaa", cursive;
+}
+body .pokedex .pokedex-input {
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+  width: 100%;
+}
+body .pokedex .pokedex-input input {
+  border: 2px solid gray;
+  border-top-left-radius: 15rem;
+  border-bottom-left-radius: 15rem;
+  border-right: none;
+}
+body .pokedex .pokedex-input input:focus {
+  outline-color: rgb(80, 80, 80);
+}
+body .pokedex .pokedex-input button {
+  border: 0;
+  border-top-right-radius: 15rem;
+  border-bottom-right-radius: 15rem;
+  background-color: gray;
+  padding: 3px;
+  width: 3.5rem;
+}
+body .pokedex .pokedex-result {
+  width: 100%;
+}
+body .pokedex .pokedex-result .pokemon-switch {
+  display: flex;
+}
+body .pokedex .pokedex-result .pokemon-switch .btn-left {
+  background-color: gray;
+  border: none;
+  border-bottom-right-radius: 1.5rem;
+  flex-grow: 1;
+  height: 3rem;
+  margin-right: 0.5rem;
+}
+body .pokedex .pokedex-result .pokemon-switch .btn-right {
+  background-color: gray;
+  border: none;
+  border-bottom-left-radius: 1.5rem;
+  flex-grow: 1;
+  height: 3rem;
+}
+body .pokedex .pokedex-result .pokemon-card .identifier-section {
+  display: flex;
+  justify-content: center;
+}
+body .pokedex .pokedex-result .pokemon-card .pokemon-image {
+  display: flex;
+  justify-content: center;
+}
+body .pokedex .pokedex-result .pokemon-card .pokemon-image img {
+  height: 10rem;
+}
+body .pokedex .pokedex-result .pokemon-card .characteristics {
+  background-color: #30a7d7;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 0 1rem;
+  padding-left: 1rem;
+}/*# sourceMappingURL=style.css.map */
