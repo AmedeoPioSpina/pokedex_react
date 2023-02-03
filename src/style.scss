@@ -76,6 +76,94 @@ body{
                     margin: 0 1rem;
                     padding-left: 1rem;
                 }
+
+                .bug{
+                    background-color: #a7b91d;
+                }
+                .dark{
+                    background-color: #4f3a2d;
+                }
+                .dragon{
+                    background-color: #745fe1;
+                }
+                .electric{
+                    background-color: #fdb91a;
+                }
+                .fairy{
+                    background-color: #f5aff4;
+                }
+                .fighting{
+                    background-color: #803121;
+                }
+                .fire{
+                    background-color: #cc2500;
+                }
+                .flying{
+                    background-color: #93a9f6;
+                }
+                .ghost{
+                    background-color: #5c5fb0;
+                }
+                .grass{
+                    background-color: #73c238;
+                }
+                .ground{
+                    background-color: #d3b158;
+                }
+                .ice{
+                    background-color: #a1e6fc;
+                }
+                .normal{
+                    background-color: #bcb7ad;
+                }
+                .poison{
+                    background-color: #914495;
+                }
+                .psychic{
+                    background-color: #ed4882;
+                }
+                .rock{
+                    background-color: #baa459;
+                }
+                .steel{
+                    background-color: #bbbbc7;
+                }
+                .water{
+                    background-color: #3393f4;
+                }
+
+                .type-field{
+                    margin: 0 1rem;
+                    ul{
+                        display: flex;
+                        padding: 0;
+                        li{
+                            border-radius: 0.2rem;
+                            list-style-type: none;
+                            padding: 0.2rem;
+
+                        }
+                        .type-one{
+                            margin-right: 0.5rem;
+                        }
+                        
+                    }
+                }
+
+                .weaknesses-field{
+                    margin-left: 1rem;
+                    ul{
+                        display: flex;
+                        justify-content: start;
+                        padding: 0;
+                        li{
+                            border-radius: 0.2rem;
+                            list-style-type: none;
+                            padding: 0.2rem;
+                            margin: 0 0.5rem 0 0;
+                        }
+                    }
+                }
             }
         }
     }

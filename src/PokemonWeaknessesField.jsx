@@ -73,7 +73,7 @@ const PokemonWeaknessesField = ({pkData}) => {
             {
                 Object.values(pkWeaknessesData).length!==0 ? (
                     Object.values(pkWeaknessesData).map((element, index) => {
-                        return <li key={index}>{firstLetterToUpperCaseFormatFunc(element.name)}</li>
+                        return <li className={element.name} key={index}>{firstLetterToUpperCaseFormatFunc(element.name)}</li>
                     })
                 ) : (<li></li>)
             }

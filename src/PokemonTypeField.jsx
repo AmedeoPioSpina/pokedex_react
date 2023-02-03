@@ -11,7 +11,7 @@ const PokemonTypeField = ({pkData}) => {
 
     return(
         <>
-            <li className={`type-one ${pkData.types[0].type.name}`} >
+            <li className={`type-one ${pkData.types[0].type.name}`}>
                 {firstLetterToUpperCaseFormatFunc(pkData.types[0].type.name)}
             </li>
             <li className={`type-two ${pkData.types[1].type.name}`}>

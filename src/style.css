@@ -72,4 +72,87 @@ body .pokedex .pokedex-result .pokemon-card .characteristics {
   grid-template-columns: auto auto;
   margin: 0 1rem;
   padding-left: 1rem;
+}
+body .pokedex .pokedex-result .pokemon-card .bug {
+  background-color: #a7b91d;
+}
+body .pokedex .pokedex-result .pokemon-card .dark {
+  background-color: #4f3a2d;
+}
+body .pokedex .pokedex-result .pokemon-card .dragon {
+  background-color: #745fe1;
+}
+body .pokedex .pokedex-result .pokemon-card .electric {
+  background-color: #fdb91a;
+}
+body .pokedex .pokedex-result .pokemon-card .fairy {
+  background-color: #f5aff4;
+}
+body .pokedex .pokedex-result .pokemon-card .fighting {
+  background-color: #803121;
+}
+body .pokedex .pokedex-result .pokemon-card .fire {
+  background-color: #cc2500;
+}
+body .pokedex .pokedex-result .pokemon-card .flying {
+  background-color: #93a9f6;
+}
+body .pokedex .pokedex-result .pokemon-card .ghost {
+  background-color: #5c5fb0;
+}
+body .pokedex .pokedex-result .pokemon-card .grass {
+  background-color: #73c238;
+}
+body .pokedex .pokedex-result .pokemon-card .ground {
+  background-color: #d3b158;
+}
+body .pokedex .pokedex-result .pokemon-card .ice {
+  background-color: #a1e6fc;
+}
+body .pokedex .pokedex-result .pokemon-card .normal {
+  background-color: #bcb7ad;
+}
+body .pokedex .pokedex-result .pokemon-card .poison {
+  background-color: #914495;
+}
+body .pokedex .pokedex-result .pokemon-card .psychic {
+  background-color: #ed4882;
+}
+body .pokedex .pokedex-result .pokemon-card .rock {
+  background-color: #baa459;
+}
+body .pokedex .pokedex-result .pokemon-card .steel {
+  background-color: #bbbbc7;
+}
+body .pokedex .pokedex-result .pokemon-card .water {
+  background-color: #3393f4;
+}
+body .pokedex .pokedex-result .pokemon-card .type-field {
+  margin: 0 1rem;
+}
+body .pokedex .pokedex-result .pokemon-card .type-field ul {
+  display: flex;
+  padding: 0;
+}
+body .pokedex .pokedex-result .pokemon-card .type-field ul li {
+  border-radius: 0.2rem;
+  list-style-type: none;
+  padding: 0.2rem;
+}
+body .pokedex .pokedex-result .pokemon-card .type-field ul .type-one {
+  margin-right: 0.5rem;
+}
+body .pokedex .pokedex-result .pokemon-card .weaknesses-field {
+  margin-left: 1rem;
+}
+body .pokedex .pokedex-result .pokemon-card .weaknesses-field ul {
+  display: flex;
+  justify-content: start;
+  padding: 0;
+}
+body .pokedex .pokedex-result .pokemon-card .weaknesses-field ul li {
+  border-radius: 0.2rem;
+  list-style-type: none;
+  padding: 0.2rem;
+  margin: 0 0.5rem 0 0;
 }/*# sourceMappingURL=style.css.map */

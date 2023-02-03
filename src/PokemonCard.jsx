@@ -85,7 +85,7 @@ const PokemonCard = ({pkData}) => {
             <div className="evolutios-field">
                 <p>Evolutios</p>
                 <ul>
-                    <PokemonEvolutionsField pkData={pkData}/>
+                    {/* <PokemonEvolutionsField pkData={pkData}/> */}
                 </ul>
             </div>
         </div>
