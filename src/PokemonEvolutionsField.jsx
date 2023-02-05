@@ -33,16 +33,18 @@ const PokemonEvolutionsField = ({pkData}) => {
 
         evolutions.push(curr.name);
         if(next.length!==0){
+            evolutions.push([]);
             next.map((element) => {
-                evolutions.push(element.species.name);
+                evolutions[1].push(element.species.name);
                 if(element.evolves_to.length!==0){
-                    element.evolves_to.map((el) => evolutions.push(el.species.name))
+                    evolutions.push([]);
+                    element.evolves_to.map((el) => evolutions[2].push(el.species.name))
                 }
             })
 
         }
         console.log(evolutions)
-        setPkEvolutionsData(prev => prev.push(evolutions));
+        setPkEvolutionsData([...evolutions]);
         
     }
 
@@ -61,24 +63,24 @@ const PokemonEvolutionsField = ({pkData}) => {
         <>
             {
                 pkEvolutionsData.length!==0 ? (
-                    Object.values(pkEvolutionsData).map(element => {
-                            return (<li key={element}>{element}</li>)
-                        // else if(index===2 && element.length!==0){
-                        //     return  
-                        //         <li key={"ev1"}>
-                        //             <ul key={"ev1list"}>
-                        //                 {pkEvolutionsData[1].map((el) => <li key={el.name}>{el.name}</li>)}
-                        //             </ul>
-                        //         </li>
-                        // }
-                        // else if(index===3 && element.length!==0){
-                        //     return  
-                        //         <li key={"ev2"}>
-                        //             <ul key={"ev2list"}>
-                        //                 {pkEvolutionsData[2].map((el) => <li key={el.name}>{el.name}</li>)}
-                        //             </ul>
-                        //         </li>
-                        // }
+                    Object.values(pkEvolutionsData).map((element, index) => {
+                        if(index===1 && element.length!==0){
+                            return  
+                                <li key={"ev1"}>
+                                    <ul key={"ev1list"}>
+                                        {element.map((el) => <li key={el.name}>{el.name}</li>)}
+                                    </ul>
+                                </li>
+                        }
+                        else if(index===2 && element.length!==0){
+                            return  
+                                <li key={"ev2"}>
+                                    <ul key={"ev2list"}>
+                                        {element.map((el) => <li key={el.name}>{el.name}</li>)}
+                                    </ul>
+                                </li>
+                        }
+                        return <li key={element}>{element}</li>
                     })
                 ) : (<li>ciao</li>)
             }
