@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { firstLetterToUpperCaseFormatFunc } from "./firstLetterToUpperCaseFormatFunc";
 
 const PokemonEvolutionsField = ({pkData}) => {
 
@@ -65,24 +66,24 @@ const PokemonEvolutionsField = ({pkData}) => {
                 pkEvolutionsData.length!==0 ? (
                     Object.values(pkEvolutionsData).map((element, index) => {
                         if(index===1 && element.length!==0){
-                            return  
-                                <li key={"ev1"}>
-                                    <ul key={"ev1list"}>
-                                        {element.map((el) => <li key={el.name}>{el.name}</li>)}
-                                    </ul>
-                                </li>
+                            return  (
+                                <>
+                                    <img src="https://cdn-icons-png.flaticon.com/512/32/32195.png" alt="" />
+                                    {element.map((el) => <li key={el}>{firstLetterToUpperCaseFormatFunc(el)}</li>)}
+                                </>
+                            )
                         }
                         else if(index===2 && element.length!==0){
-                            return  
-                                <li key={"ev2"}>
-                                    <ul key={"ev2list"}>
-                                        {element.map((el) => <li key={el.name}>{el.name}</li>)}
-                                    </ul>
-                                </li>
+                            return  (
+                                <>
+                                    <img src="https://cdn-icons-png.flaticon.com/512/32/32195.png" alt="" />
+                                    {element.map((el) => <li key={el}>{firstLetterToUpperCaseFormatFunc(el)}</li>)}
+                                </>
+                            )
                         }
-                        return <li key={element}>{element}</li>
+                        return <li key={element}>{firstLetterToUpperCaseFormatFunc(element)}</li>
                     })
-                ) : (<li>ciao</li>)
+                ) : (<li></li>)
             }
         </>
     )

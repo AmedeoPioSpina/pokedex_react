@@ -38,10 +38,21 @@ const PokemonPrevOrNext = ({pkData, setPkData, pkDataPrev, setPkDataPrev, pkData
     })()},[pkData])
 
     return (
-        <div className="pokemon-switch">
-            <button className={"btn-left"} onClick={() => {handlePrevClick()}}>{`< ${pkDataPrev.name} N° ${pkDataPrev.id}`}</button>
-            <button className={"btn-right"} onClick={() => {handleNextClick()}}>{`${pkDataNext.name} N° ${pkDataNext.id} >`}</button>
-        </div>
+        <>
+            {
+                Object.values(pkDataNext).length!==0 ? (
+                    <div className="pokemon-switch">
+                        <button className={"btn-left"} onClick={() => {handlePrevClick()}}>{`< ${firstLetterToUpperCaseFormatFunc(pkDataPrev.name)} N° ${pkDataPrev.id}`}</button>
+                        <button className={"btn-right"} onClick={() => {handleNextClick()}}>{`${firstLetterToUpperCaseFormatFunc(pkDataNext.name)} N° ${pkDataNext.id} >`}</button>
+                    </div>
+                ):(
+                    <div className="pokemon-switch">
+                        <button className={"btn-left"}></button>
+                        <button className={"btn-right"}></button>
+                    </div>
+                )
+            }
+        </>
     )
 }       
 

@@ -52,14 +52,16 @@ const PokemonCard = ({pkData}) => {
                 </div>
 
                 <div className="skills-field">
-                    <p className="name-field">
+                    <p className="field-name">
                         Skills
                     </p>
-                    <PokemonSkillsField pkData={pkData}/>
+                    <ul>
+                        <PokemonSkillsField pkData={pkData}/>
+                    </ul>
                 </div>
 
                 <div className="gender-field">
-                    <p className="name-field">
+                    <p className="field-name">
                         Gender
                     </p>
                     <div className="gender-icons">

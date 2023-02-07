@@ -5,8 +5,8 @@ body{
         align-items: center;
         display: flex;
         flex-direction: column;
-
-        h1{
+        font-family: 'Comfortaa', cursive;
+        button{
             font-family: 'Comfortaa', cursive;
         }
         .pokedex-input{
@@ -21,6 +21,8 @@ body{
                 border-top-left-radius: 15rem;
                 border-bottom-left-radius: 15rem;
                 border-right: none;
+                font-family: 'Comfortaa', cursive;
+                padding-left: 0.4rem;
 
                 &:focus{
                     outline-color: rgb(80, 80, 80);
@@ -31,6 +33,7 @@ body{
                 border-top-right-radius: 15rem;
                 border-bottom-right-radius: 15rem;
                 background-color: gray;
+                color: white;
                 padding: 3px;
                 width: 3.5rem;
             }
@@ -40,11 +43,14 @@ body{
 
             .pokemon-switch{
                 display: flex;
+                button{
+                    color: white;
+                }
                 .btn-left{
                     background-color:  gray;
                     border: none;
                     border-bottom-right-radius: 1.5rem;
-                    flex-grow: 1;
+                    width: 50%;
                     height: 3rem;
                     margin-right: 0.5rem;
                 }
@@ -52,7 +58,7 @@ body{
                     background-color:  gray;
                     border: none;
                     border-bottom-left-radius: 1.5rem;
-                    flex-grow: 1;
+                    width: 50%;
                     height: 3rem;
                 }
             }
@@ -60,6 +66,7 @@ body{
                 .identifier-section{
                     display: flex;
                     justify-content: center;
+                    margin-right: 0.2rem;
                 }
                 .pokemon-image{
                     display: flex;
@@ -75,6 +82,24 @@ body{
                     grid-template-columns: auto auto;
                     margin: 0 1rem;
                     padding-left: 1rem;
+                    .field-name{
+                        color: white;
+                    }
+                    .skills-field{
+                        ul{
+                            padding: 0;
+                            li{
+                                list-style-type: none;
+                            }
+                        }
+                    }
+                    .gender-field{
+                        .gender-icons{
+                            img{
+                                width: 2rem;
+                            }
+                        }
+                    }
                 }
 
                 .bug{
@@ -139,6 +164,7 @@ body{
                         padding: 0;
                         li{
                             border-radius: 0.2rem;
+                            color: white;
                             list-style-type: none;
                             padding: 0.2rem;
 
@@ -158,9 +184,31 @@ body{
                         padding: 0;
                         li{
                             border-radius: 0.2rem;
+                            color: white;
                             list-style-type: none;
                             padding: 0.2rem;
                             margin: 0 0.5rem 0 0;
+                        }
+                    }
+                }
+                .evolutios-field{
+                    background-color: gray;
+                    border-radius: 0.5rem;
+                    color: white;
+                    margin: 0 1rem;
+                    p{
+                        padding: 1rem 0 0 1rem;
+                    }
+                    ul{
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0;
+                        li{
+                            list-style-type: none;
+                        }
+                        img{
+                            width: 2rem;
                         }
                     }
                 }
