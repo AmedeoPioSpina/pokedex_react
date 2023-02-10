@@ -4,6 +4,7 @@ import { useState } from "react";
 import PokedexSearch from "./PokedexSearch";
 import axios from "axios";
 import PokedexResult from "./PokedexResult";
+import "./reset.css";
 import "./style.css";
 
 const Pokedex = () => {

@@ -19,11 +19,11 @@ const PokemonCard = ({pkData}) => {
         <div className="pokemon-card">
             <div className="identifier-section">
                 <div className="name-field">
-                    <p>{firstLetterToUpperCaseFormatFunc(pkData.name)}</p>
+                    <p className="identifier-name">{firstLetterToUpperCaseFormatFunc(pkData.name)}</p>
                 </div>
 
                 <div className="identification-number-field">
-                    <p>{`N° ${pkData.id}`}</p>
+                    <p className="identifier-number">{`N°${pkData.id}`}</p>
                 </div>
             </div>
 
