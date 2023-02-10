@@ -57,14 +57,15 @@
                 border-bottom-right-radius: 1.5rem;
                 width: 50%;
                 height: 3rem;
-                margin-right: 0.5rem;
+                margin-right: 0.25rem;
             }
             .btn-right{
                 background-color:  rgb(219, 0, 0);
                 border: none;
                 border-bottom-left-radius: 1.5rem;
-                width: 50%;
                 height: 3rem;
+                margin-left: 0.25rem;
+                width: 50%;
             }
         }
         .pokemon-card{
@@ -84,127 +85,134 @@
                 display: flex;
                 justify-content: center;
                 img{
-                    height: 10rem;
+                   width: 23rem;
                 }
             }
-            .characteristics{
-                background-color: #30a7d7;
-                border-radius: 0.5rem;
-                display: grid;
-                row-gap: 1rem;
-                grid-template-columns: auto auto;
-                margin: 0 1rem 1rem 1rem;
-                padding: 1rem;
-                .field-name{
-                    color: white;
-                    margin-bottom: 0.3rem;
-                }
-                .skills-field{
-                    ul{
-                        li{
-                            list-style-type: none;
+            .poke-info{
+                .characteristics{
+                    background-color: #30a7d7;
+                    border-radius: 0.5rem;
+                    display: grid;
+                    row-gap: 1rem;
+                    grid-template-columns: auto auto;
+                    margin: 0 1rem 1rem 1rem;
+                    padding: 1rem;
+                    .field-name{
+                        color: white;
+                        margin-bottom: 0.3rem;
+                    }
+                    .skills-field{
+                        ul{
+                            li{
+                                list-style-type: none;
+                            }
+                        }
+                    }
+                    .gender-field{
+                        .gender-icons{
+                            img{
+                                width: 2rem;
+                            }
                         }
                     }
                 }
-                .gender-field{
-                    .gender-icons{
-                        img{
-                            width: 2rem;
+
+                .type-and-weakness{
+                    .bug{
+                        background-color: #a7b91d;
+                    }
+                    .dark{
+                        background-color: #4f3a2d;
+                    }
+                    .dragon{
+                        background-color: #745fe1;
+                    }
+                    .electric{
+                        background-color: #fdb91a;
+                    }
+                    .fairy{
+                        background-color: #f5aff4;
+                    }
+                    .fighting{
+                        background-color: #803121;
+                    }
+                    .fire{
+                        background-color: #cc2500;
+                    }
+                    .flying{
+                        background-color: #93a9f6;
+                    }
+                    .ghost{
+                        background-color: #5c5fb0;
+                    }
+                    .grass{
+                        background-color: #73c238;
+                    }
+                    .ground{
+                        background-color: #d3b158;
+                    }
+                    .ice{
+                        background-color: #a1e6fc;
+                    }
+                    .normal{
+                        background-color: #bcb7ad;
+                    }
+                    .poison{
+                        background-color: #914495;
+                    }
+                    .psychic{
+                        background-color: #ed4882;
+                    }
+                    .rock{
+                        background-color: #baa459;
+                    }
+                    .steel{
+                        background-color: #bbbbc7;
+                    }
+                    .water{
+                        background-color: #3393f4;
+                    }
+
+                    .type-field{
+                        margin: 0 1rem 1rem 1rem;
+                        p{
+                            margin-bottom: 0.5rem;
+                        }
+                        ul{
+                            display: flex;
+                            li{
+                                border-radius: 0.2rem;
+                                color: white;
+                                list-style-type: none;
+                                padding: 0.2rem;
+
+                            }
+                            .type-one{
+                                margin-right: 0.5rem;
+                            }
+                            
                         }
                     }
-                }
-            }
 
-            .bug{
-                background-color: #a7b91d;
-            }
-            .dark{
-                background-color: #4f3a2d;
-            }
-            .dragon{
-                background-color: #745fe1;
-            }
-            .electric{
-                background-color: #fdb91a;
-            }
-            .fairy{
-                background-color: #f5aff4;
-            }
-            .fighting{
-                background-color: #803121;
-            }
-            .fire{
-                background-color: #cc2500;
-            }
-            .flying{
-                background-color: #93a9f6;
-            }
-            .ghost{
-                background-color: #5c5fb0;
-            }
-            .grass{
-                background-color: #73c238;
-            }
-            .ground{
-                background-color: #d3b158;
-            }
-            .ice{
-                background-color: #a1e6fc;
-            }
-            .normal{
-                background-color: #bcb7ad;
-            }
-            .poison{
-                background-color: #914495;
-            }
-            .psychic{
-                background-color: #ed4882;
-            }
-            .rock{
-                background-color: #baa459;
-            }
-            .steel{
-                background-color: #bbbbc7;
-            }
-            .water{
-                background-color: #3393f4;
-            }
-
-            .type-field{
-                margin: 0 1rem 1rem 1rem;
-                p{
-                    margin-bottom: 0.5rem;
-                }
-                ul{
-                    display: flex;
-                    li{
-                        border-radius: 0.2rem;
-                        color: white;
-                        list-style-type: none;
-                        padding: 0.2rem;
-
-                    }
-                    .type-one{
-                        margin-right: 0.5rem;
-                    }
-                    
-                }
-            }
-
-            .weaknesses-field{
-                margin: 0 1rem 1rem 1rem;
-                p{
-                    margin-bottom: 0.5rem;
-                }
-                ul{
-                    display: flex;
-                    justify-content: start;
-                    li{
-                        border-radius: 0.2rem;
-                        color: white;
-                        list-style-type: none;
-                        padding: 0.2rem;
-                        margin-right: 0.5rem;
+                    .weaknesses-field{
+                        margin: 0 1rem 1rem 1rem;
+                        p{
+                            margin-bottom: 0.5rem;
+                        }
+                        ul{
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: start;
+                            row-gap: 0.5rem;
+                            li{
+                                border-radius: 0.2rem;
+                                white-space: nowrap;
+                                color: white;
+                                list-style-type: none;
+                                padding: 0.2rem;
+                                margin-right: 0.5rem;
+                            }
+                        }
                     }
                 }
             }
@@ -212,7 +220,7 @@
                 background-color: gray;
                 border-radius: 0.5rem;
                 color: white;
-                margin: 0 1rem;
+                margin: 0 1rem 1rem 1rem;
                 p{
                     padding: 1rem 0 1rem 1rem;
                 }
@@ -237,3 +245,43 @@
     }
 }
 
+@media screen and (min-width: 480px) {
+    .poke-info{
+        display: flex;
+        .characteristics{
+            flex-grow: 1;
+            width: 50%;
+        }
+        .type-and-weakness{
+            flex-grow: 1;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .pokedex{
+        .pokedex-result{
+            box-shadow: 0px 25px 62px -15px #888888;
+            width: 70%;
+            .pokemon-card{
+                display: grid;
+                .poke-presentation{
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+                .poke-info{
+                    flex-direction: column;
+                    grid-row: 1;
+                    grid-column: 2;
+                    .characteristics{
+                        width: auto;
+                    }
+                }
+                .evolutios-field{
+                    grid-row: 2;
+                    grid-column: 1/2 span;
+                }
+            }
+        }
+    }
+}

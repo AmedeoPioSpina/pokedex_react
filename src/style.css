@@ -55,14 +55,15 @@
   border-bottom-right-radius: 1.5rem;
   width: 50%;
   height: 3rem;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
 }
 .pokedex .pokedex-result .pokemon-switch .btn-right {
   background-color: rgb(219, 0, 0);
   border: none;
   border-bottom-left-radius: 1.5rem;
-  width: 50%;
   height: 3rem;
+  margin-left: 0.25rem;
+  width: 50%;
 }
 .pokedex .pokedex-result .pokemon-card .identifier-section {
   display: flex;
@@ -81,9 +82,9 @@
   justify-content: center;
 }
 .pokedex .pokedex-result .pokemon-card .pokemon-image img {
-  height: 10rem;
+  width: 23rem;
 }
-.pokedex .pokedex-result .pokemon-card .characteristics {
+.pokedex .pokedex-result .pokemon-card .poke-info .characteristics {
   background-color: #30a7d7;
   border-radius: 0.5rem;
   display: grid;
@@ -92,100 +93,103 @@
   margin: 0 1rem 1rem 1rem;
   padding: 1rem;
 }
-.pokedex .pokedex-result .pokemon-card .characteristics .field-name {
+.pokedex .pokedex-result .pokemon-card .poke-info .characteristics .field-name {
   color: white;
   margin-bottom: 0.3rem;
 }
-.pokedex .pokedex-result .pokemon-card .characteristics .skills-field ul li {
+.pokedex .pokedex-result .pokemon-card .poke-info .characteristics .skills-field ul li {
   list-style-type: none;
 }
-.pokedex .pokedex-result .pokemon-card .characteristics .gender-field .gender-icons img {
+.pokedex .pokedex-result .pokemon-card .poke-info .characteristics .gender-field .gender-icons img {
   width: 2rem;
 }
-.pokedex .pokedex-result .pokemon-card .bug {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .bug {
   background-color: #a7b91d;
 }
-.pokedex .pokedex-result .pokemon-card .dark {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .dark {
   background-color: #4f3a2d;
 }
-.pokedex .pokedex-result .pokemon-card .dragon {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .dragon {
   background-color: #745fe1;
 }
-.pokedex .pokedex-result .pokemon-card .electric {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .electric {
   background-color: #fdb91a;
 }
-.pokedex .pokedex-result .pokemon-card .fairy {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .fairy {
   background-color: #f5aff4;
 }
-.pokedex .pokedex-result .pokemon-card .fighting {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .fighting {
   background-color: #803121;
 }
-.pokedex .pokedex-result .pokemon-card .fire {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .fire {
   background-color: #cc2500;
 }
-.pokedex .pokedex-result .pokemon-card .flying {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .flying {
   background-color: #93a9f6;
 }
-.pokedex .pokedex-result .pokemon-card .ghost {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .ghost {
   background-color: #5c5fb0;
 }
-.pokedex .pokedex-result .pokemon-card .grass {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .grass {
   background-color: #73c238;
 }
-.pokedex .pokedex-result .pokemon-card .ground {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .ground {
   background-color: #d3b158;
 }
-.pokedex .pokedex-result .pokemon-card .ice {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .ice {
   background-color: #a1e6fc;
 }
-.pokedex .pokedex-result .pokemon-card .normal {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .normal {
   background-color: #bcb7ad;
 }
-.pokedex .pokedex-result .pokemon-card .poison {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .poison {
   background-color: #914495;
 }
-.pokedex .pokedex-result .pokemon-card .psychic {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .psychic {
   background-color: #ed4882;
 }
-.pokedex .pokedex-result .pokemon-card .rock {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .rock {
   background-color: #baa459;
 }
-.pokedex .pokedex-result .pokemon-card .steel {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .steel {
   background-color: #bbbbc7;
 }
-.pokedex .pokedex-result .pokemon-card .water {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .water {
   background-color: #3393f4;
 }
-.pokedex .pokedex-result .pokemon-card .type-field {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .type-field {
   margin: 0 1rem 1rem 1rem;
 }
-.pokedex .pokedex-result .pokemon-card .type-field p {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .type-field p {
   margin-bottom: 0.5rem;
 }
-.pokedex .pokedex-result .pokemon-card .type-field ul {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .type-field ul {
   display: flex;
 }
-.pokedex .pokedex-result .pokemon-card .type-field ul li {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .type-field ul li {
   border-radius: 0.2rem;
   color: white;
   list-style-type: none;
   padding: 0.2rem;
 }
-.pokedex .pokedex-result .pokemon-card .type-field ul .type-one {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .type-field ul .type-one {
   margin-right: 0.5rem;
 }
-.pokedex .pokedex-result .pokemon-card .weaknesses-field {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .weaknesses-field {
   margin: 0 1rem 1rem 1rem;
 }
-.pokedex .pokedex-result .pokemon-card .weaknesses-field p {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .weaknesses-field p {
   margin-bottom: 0.5rem;
 }
-.pokedex .pokedex-result .pokemon-card .weaknesses-field ul {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .weaknesses-field ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: start;
+  row-gap: 0.5rem;
 }
-.pokedex .pokedex-result .pokemon-card .weaknesses-field ul li {
+.pokedex .pokedex-result .pokemon-card .poke-info .type-and-weakness .weaknesses-field ul li {
   border-radius: 0.2rem;
+  white-space: nowrap;
   color: white;
   list-style-type: none;
   padding: 0.2rem;
@@ -195,7 +199,7 @@
   background-color: gray;
   border-radius: 0.5rem;
   color: white;
-  margin: 0 1rem;
+  margin: 0 1rem 1rem 1rem;
 }
 .pokedex .pokedex-result .pokemon-card .evolutios-field p {
   padding: 1rem 0 1rem 1rem;
@@ -215,4 +219,42 @@
 }
 .pokedex .pokedex-result .pokemon-card .evolutios-field ul img {
   width: 2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .poke-info {
+    display: flex;
+  }
+  .poke-info .characteristics {
+    flex-grow: 1;
+    width: 50%;
+  }
+  .poke-info .type-and-weakness {
+    flex-grow: 1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pokedex .pokedex-result {
+    box-shadow: 0px 25px 62px -15px #888888;
+    width: 70%;
+  }
+  .pokedex .pokedex-result .pokemon-card {
+    display: grid;
+  }
+  .pokedex .pokedex-result .pokemon-card .poke-presentation {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .pokedex .pokedex-result .pokemon-card .poke-info {
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .pokedex .pokedex-result .pokemon-card .poke-info .characteristics {
+    width: auto;
+  }
+  .pokedex .pokedex-result .pokemon-card .evolutios-field {
+    grid-row: 2;
+    grid-column: 1/2 span;
+  }
 }/*# sourceMappingURL=style.css.map */
